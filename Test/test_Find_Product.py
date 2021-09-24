@@ -18,7 +18,7 @@ import HtmlTestRunner
 from Utils import utils as utils
 import logging
 
-
+@pytest.mark.slow
 @pytest.mark.usefixtures("test_setup")
 class TestFindProduct():
 

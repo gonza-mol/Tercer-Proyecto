@@ -11,6 +11,7 @@ class ProductPageLocators():
     title_product_searched = (By.CSS_SELECTOR, "#product_details>div>div:nth-child(2)>div>div>h1>span")
     product_not_found = (By.CSS_SELECTOR, "#maincontainer>div>div>div>div>div:nth-child(4)")
     btn_Add_Wish_List = (By.CSS_SELECTOR, "a.wishlist_add.btn.btn-large")
+    btn_Remove_Wish_List = (By.CSS_SELECTOR, "#product>fieldset>div.wishlist>a.wishlist_remove.btn.btn-large")
 
 
 class ProductPage():
@@ -35,3 +36,7 @@ class ProductPage():
 
     def Add_Wish_List(self):
         self.driver.find_element(*ProductPageLocators.btn_Add_Wish_List).click()
+
+    def Remove_Wish_List(self):
+        self.driver.find_element(*ProductPageLocators.btn_Remove_Wish_List).click()
+

@@ -49,9 +49,15 @@ class TestVerifyWishList():
         time.sleep(2)
         # Acá creo un objeto del  tipo de producto elegido, y selecciono el color, y la cantidad y verifico que coincido lo que pido
         pp = ProductPage(driver)
-        time.sleep(5)
-        pp.Add_Wish_List()
-        time.sleep(5)
+        time.sleep(3)
+        try:
+            pp.Add_Wish_List()
+
+        except:
+            pp.Remove_Wish_List()
+            pp.Add_Wish_List()
+
+        time.sleep(3)
         product = pp.verify_Existing_Product()
         lp = LandingPage(driver)
         lp.Select_My_Wish_List_Option()
