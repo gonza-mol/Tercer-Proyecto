@@ -13,6 +13,9 @@ class ContactUsPageLocators():
     text_Enquiry = (By.ID, "ContactUsFrm_enquiry")
     btn_SubmitForm = (By.CSS_SELECTOR, "div.col-md-6.col-sm-6>button")
     label_Enquiry_Ok = (By.CSS_SELECTOR, "p:nth-child(3)")
+    error_label_FirstName = (By.CSS_SELECTOR, "#field_11>span>div.element_error.has-error")
+    error_label_Email =(By.CSS_SELECTOR, "#field_12>span>div.element_error.has-error")
+    error_Label_Enquiry = (By.CSS_SELECTOR, "#field_13>span>div.element_error.has-error")
 
 
 class ContactUsPage():
@@ -40,3 +43,12 @@ class ContactUsPage():
 
     def Verify_Enquiry_Success(self):
         return self.driver.find_element(*ContactUsPageLocators.label_Enquiry_Ok).text
+
+    def get_FirstName (self):
+        return self.driver.find_element(*ContactUsPageLocators.error_label_FirstName).text
+
+    def get_Email(self):
+        return self.driver.find_element(*ContactUsPageLocators.error_label_Email).text
+
+    def get_Enquiry(self):
+        return self.driver.find_element(*ContactUsPageLocators.error_Label_Enquiry).text
