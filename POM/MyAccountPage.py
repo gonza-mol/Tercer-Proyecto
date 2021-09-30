@@ -20,6 +20,12 @@ class MyAccountPageLocators():
       execute_search = (By.CSS_SELECTOR, "#search_form>div>div>i")
       footer = (By.CSS_SELECTOR, "#footer>footer>section.footersocial>div>div")
       link_ContactUs = (By.CSS_SELECTOR, "div.pull-left>div>ul>li:nth-child(5)>a")
+      hair_care_btn = (By.CSS_SELECTOR, "#categorymenu>nav>ul>li:nth-child(7)>a")
+      shampoo_option = (By.CSS_SELECTOR, "li:nth-child(7)>div>ul:nth-child(1)>li:nth-child(2)>a")
+      itemBox = (By.CSS_SELECTOR, "div.container-fluid>div>div.block_7>ul>li>a")
+      itemFragance = (By.CSS_SELECTOR, "tbody>tr:nth-child(1)>td.name>a")
+      itemShampoo = (By.CSS_SELECTOR, "tbody>tr:nth-child(2)>td.name>a")
+
 
 
 class MyAccountPage():
@@ -82,3 +88,26 @@ class MyAccountPage():
 
     def seleccionar_ContactUs_Option(self):
         self.driver.find_element(*MyAccountPageLocators.link_ContactUs).click()
+
+
+    def seleccionar_Producto_Makeup(self):
+        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*MyAccountPageLocators.hair_care_btn))
+        hover.perform()
+        self.driver.find_element(*MyAccountPageLocators.shampoo_option).click()
+
+    def select_HairCare_Shampoo(self):
+        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*MyAccountPageLocators.hair_care_btn))
+        hover.perform()
+        self.driver.find_element(*MyAccountPageLocators.shampoo_option).click()
+
+    def open_ItemBox (self):
+        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*MyAccountPageLocators.itemBox))
+        hover.perform()
+
+
+
+    def get_TitleFragance(self):
+        return self.driver.find_element(*MyAccountPageLocators.itemFragance).text
+
+    def get_TitleShampoo(self):
+        return self.driver.find_element(*MyAccountPageLocators.itemShampoo).text

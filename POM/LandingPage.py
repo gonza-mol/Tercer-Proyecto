@@ -5,6 +5,9 @@ class LandingPageLocators():
     go_Login = (By.CSS_SELECTOR, "#customer_menu_top>li>a")
     label_name = (By.CSS_SELECTOR, "#customer_menu_top>li>a>div")
     label_My_Wish_List = (By.CSS_SELECTOR, "#customer_menu_top>li>ul>li:nth-child(2)>a>i")
+    currency_Box = (By.CSS_SELECTOR, "div.container-fluid>div>div.block_6>ul>li>a")
+    Euro_Currency = (By.CSS_SELECTOR, "div.block_6>ul>li>ul>li:nth-child(1)>a")
+
 
 class LandingPage():
 
@@ -21,5 +24,12 @@ class LandingPage():
         hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*LandingPageLocators.label_name))
         hover.perform()
         self.driver.find_element(*LandingPageLocators.label_My_Wish_List).click()
+
+
+    def Select_Euro_Currency(self):
+        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*LandingPageLocators.currency_Box))
+        hover.perform()
+        self.driver.find_element(*LandingPageLocators.Euro_Currency).click()
+
 
 
