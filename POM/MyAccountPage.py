@@ -25,7 +25,10 @@ class MyAccountPageLocators():
       itemBox = (By.CSS_SELECTOR, "div.container-fluid>div>div.block_7>ul>li>a")
       itemFragance = (By.CSS_SELECTOR, "tbody>tr:nth-child(1)>td.name>a")
       itemShampoo = (By.CSS_SELECTOR, "tbody>tr:nth-child(2)>td.name>a")
-
+      book_option = (By.CSS_SELECTOR, "#categorymenu>nav>ul>li:nth-child(8)>a")
+      audioCd_option = (By.CSS_SELECTOR, "#categorymenu>nav>ul>li:nth-child(8)>div>ul:nth-child(1)>li:nth-child(1)>a")
+      viewFrenchBook = (By.CSS_SELECTOR, "div.thumbnail>a>img")
+      paperback_option = (By.CSS_SELECTOR, "#categorymenu>nav>ul>li:nth-child(8)>div>ul:nth-child(1)>li:nth-child(2)>a")
 
 
 class MyAccountPage():
@@ -111,3 +114,17 @@ class MyAccountPage():
 
     def get_TitleShampoo(self):
         return self.driver.find_element(*MyAccountPageLocators.itemShampoo).text
+
+
+    def seleccionar_Producto_Books_AudioCd(self):
+        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*MyAccountPageLocators.book_option))
+        hover.perform()
+        self.driver.find_element(*MyAccountPageLocators.audioCd_option).click()
+
+    def selectViewFrenchBook(self):
+        self.driver.find_element(*MyAccountPageLocators.viewFrenchBook).click()
+
+    def seleccionar_Producto_Books_Paperback(self):
+        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*MyAccountPageLocators.book_option))
+        hover.perform()
+        self.driver.find_element(*MyAccountPageLocators.paperback_option).click()

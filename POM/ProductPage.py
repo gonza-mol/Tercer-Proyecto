@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
 
+
 class ProductPageLocators():
     list_color = (By.CSS_SELECTOR, "#option305")
     qty = (By.CSS_SELECTOR, "#product_quantity")
@@ -12,6 +13,8 @@ class ProductPageLocators():
     product_not_found = (By.CSS_SELECTOR, "#maincontainer>div>div>div>div>div:nth-child(4)")
     btn_Add_Wish_List = (By.CSS_SELECTOR, "a.wishlist_add.btn.btn-large")
     btn_Remove_Wish_List = (By.CSS_SELECTOR, "#product>fieldset>div.wishlist>a.wishlist_remove.btn.btn-large")
+    lbl_Out_of_Stock_Paperback = (By.CSS_SELECTOR, "div.pricetag.jumbotron>span")
+    lbl_Paperback_Without_Stock = (By.CSS_SELECTOR, "div:nth-child(2)>div.fixed_wrapper>div>a")
 
 
 class ProductPage():
@@ -39,4 +42,18 @@ class ProductPage():
 
     def Remove_Wish_List(self):
         self.driver.find_element(*ProductPageLocators.btn_Remove_Wish_List).click()
+
+    def getLblOutofStock(self):
+        return self.driver.find_element(*ProductPageLocators.lbl_Out_of_Stock_Paperback).text
+
+    def getTitleofPaperbackWithoutStock(self):
+        return self.driver.find_element(*ProductPageLocators.lbl_Paperback_Without_Stock).text
+
+    def getObjectOutofStock(self):
+        return self.driver.find_element(*ProductPageLocators.lbl_Out_of_Stock_Paperback)
+
+
+
+
+
 
