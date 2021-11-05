@@ -7,14 +7,11 @@ from selenium import webdriver
 import unittest
 import sys
 import os
-
-from selenium.common.exceptions import NoSuchElementException
-
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from functools import partial
 from pytest_bdd import scenarios, given, when, then
 from colorama import Fore, Back, Style
-
+from selenium.common.exceptions import NoSuchElementException
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage

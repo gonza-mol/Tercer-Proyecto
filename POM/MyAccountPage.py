@@ -29,7 +29,15 @@ class MyAccountPageLocators():
       audioCd_option = (By.CSS_SELECTOR, "#categorymenu>nav>ul>li:nth-child(8)>div>ul:nth-child(1)>li:nth-child(1)>a")
       viewFrenchBook = (By.CSS_SELECTOR, "div.thumbnail>a>img")
       paperback_option = (By.CSS_SELECTOR, "#categorymenu>nav>ul>li:nth-child(8)>div>ul:nth-child(1)>li:nth-child(2)>a")
-
+      menuOption = (By.CSS_SELECTOR, "#categorymenu>nav>ul>li")
+      box_Manage_Address_Book = (By.CSS_SELECTOR, "div.col-md-9.col-xs-12.mt20>div>ul>li:nth-child(3)>a")
+      quantityOfAddressBook =(By.CSS_SELECTOR, "div.col-md-9.col-xs-12.mt20>div>ul>li:nth-child(3)>a>span")
+      btnEditOptionaddressBook = (By.CSS_SELECTOR, "td.pull-right>button")
+      txtAddress2 = (By.CSS_SELECTOR, "#AddressFrm_address_2")
+      btnContinueAddressbook = (By.CSS_SELECTOR, "div:nth-child(11)>div>button")
+      alertMessageAddressBook =(By.CSS_SELECTOR, "div.col-md-9.col-xs-12.mt20>div>div.alert.alert-success")
+      allDataAddressBookEdited = (By.CSS_SELECTOR, "div.genericbox.border-bottom>table>tbody>tr>td:nth-child(1)")
+      linkFb = (By.CSS_SELECTOR, "div.block_8>div>div>a.facebook")
 
 class MyAccountPage():
 
@@ -103,6 +111,7 @@ class MyAccountPage():
         hover.perform()
         self.driver.find_element(*MyAccountPageLocators.shampoo_option).click()
 
+
     def open_ItemBox (self):
         hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*MyAccountPageLocators.itemBox))
         hover.perform()
@@ -128,3 +137,41 @@ class MyAccountPage():
         hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*MyAccountPageLocators.book_option))
         hover.perform()
         self.driver.find_element(*MyAccountPageLocators.paperback_option).click()
+
+
+    def getNumberMenuItems(self):
+        num = len(self.driver.find_elements(*MyAccountPageLocators.menuOption))
+        return num
+
+    def getMenuItems(self):
+        menu = self.driver.find_elements(*MyAccountPageLocators.menuOption)
+        return menu
+
+    def selectBoxManageAddressBook(self):
+        self.driver.find_element(*MyAccountPageLocators.box_Manage_Address_Book).click()
+
+    def getQuantityOfAddressBook(self):
+        return self.driver.find_element(*MyAccountPageLocators.quantityOfAddressBook).text
+
+    def selectBtnEditAddressBook(self):
+        self.driver.find_element(*MyAccountPageLocators.btnEditOptionaddressBook).click()
+
+    def setAddressTwoAddressBook(self, address):
+        self.driver.find_element(*MyAccountPageLocators.txtAddress2).clear()
+        self.driver.find_element(*MyAccountPageLocators.txtAddress2).send_keys(address)
+
+    def saveBtnAddressBook(self):
+        self.driver.find_element(*MyAccountPageLocators.btnContinueAddressbook).click()
+
+    def getAlertMessageAddressBook(self):
+        return self.driver.find_element(*MyAccountPageLocators.alertMessageAddressBook).text
+
+    def getAllAddressBook(self):
+        return self.driver.find_element(*MyAccountPageLocators.allDataAddressBookEdited).text
+
+    def getObjectAlertMessageAddressBook(self):
+        return self.driver.find_element(*MyAccountPageLocators.alertMessageAddressBook)
+
+    def selectLinkFb(self):
+        self.driver.find_element(*MyAccountPageLocators.linkFb).click()
+

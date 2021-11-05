@@ -11,7 +11,7 @@ def test_setup(request):
     from selenium import webdriver
     browser = request.config.getoption("--browser")
     if browser == 'chrome':
-        driver = webdriver.Chrome("C:\\Users\\admin\\PycharmProjects\\SegundoProyecto\\Drivers\\chromedriver.exe")
+        driver = webdriver.Chrome("C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Drivers\\chromedriver.exe")
     elif browser == 'firefox':
         driver = webdriver.Firefox("C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Drivers\\geckodriver.exe")
     warnings.simplefilter('ignore', ResourceWarning)
