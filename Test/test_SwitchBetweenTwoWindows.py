@@ -53,7 +53,7 @@ class TestSwitchBetweenTwoWindows():
         driver.switch_to.window(driver.window_handles[0])
         aux3 = driver.current_window_handle
         aux4 = aux3.replace('CDwindow-', ' ')
-        print("El número de ventana 1 es: " + aux2)
+        print("El número de ventana 1 es: " + aux4)
         print("La url de la ventana 1 es: "+driver.current_url)
         print("El nombre de la Tab de la ventana 1 es: " + driver.title)
 
