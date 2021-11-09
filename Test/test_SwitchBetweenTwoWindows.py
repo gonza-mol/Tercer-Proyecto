@@ -48,6 +48,7 @@ class TestSwitchBetweenTwoWindows():
         time.sleep(2)
         print("La url de la ventana 2 es: "+driver.current_url)
         print("El nombre de la Tab de la ventana 2 es: "+driver.title)
+        assert driver.title == "Facebook - Inicia sesión o regístrate"
         print(Fore.GREEN + "++++++++++++++++++++++++++++++DATOS PESTAÑA Automation Test Store++++++++++++++++++++" + Fore.RESET)
         time.sleep(2)
         driver.switch_to.window(driver.window_handles[0])
@@ -56,6 +57,7 @@ class TestSwitchBetweenTwoWindows():
         print("El número de ventana 1 es: " + aux4)
         print("La url de la ventana 1 es: "+driver.current_url)
         print("El nombre de la Tab de la ventana 1 es: " + driver.title)
+        assert driver.title == "My Account"
 
 
 
