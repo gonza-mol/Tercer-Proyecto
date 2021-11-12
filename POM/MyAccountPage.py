@@ -41,7 +41,7 @@ class MyAccountPageLocators():
       btnContribute = (By.CSS_SELECTOR, "div.pull-right.mr20.mt5>div>a>img")
       linkAbanteCard = (By.CSS_SELECTOR, "div.pull-right.align_center>a")
       testimonials = (By.CSS_SELECTOR, "#testimonialsidebar>div>ul>li")
-      #individualTestimonial = (By.CSS_SELECTOR, "#testimonialsidebar>div>ul>li:nth-child("+[n]+")
+      #individualTestimonial = (By.CSS_SELECTOR, "#testimonialsidebar>div>ul>li")
 
 class MyAccountPage():
 
@@ -190,6 +190,5 @@ class MyAccountPage():
     def getTestimonials(self):
         return self.driver.find_elements(*MyAccountPageLocators.testimonials)
 
-   # def getIndividualTestimonial(self, n):
-      #  self.driver.find_element_by_css_selector("#testimonialsidebar>div>ul>li:nth-child("+[str(n)]+")")
+
 
