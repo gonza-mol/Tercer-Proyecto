@@ -1,22 +1,17 @@
-from pytest_bdd.parsers import string
-from selenium import webdriver
 import unittest
 import pytest
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
-from functools import partial
-from pytest_bdd import scenarios, parsers, given, when, then, scenario
 from colorama import Fore, Back, Style
 import time
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.ProductPage import ProductPage
 from POM.MyAccountPage import MyAccountPage
-import conftest
 import HtmlTestRunner
 from Utils import utils as utils
-import logging
+
 
 @pytest.mark.slow
 @pytest.mark.usefixtures("test_setup")
@@ -54,6 +49,11 @@ class TestFindProduct():
             assert name == 'There is no product that matches the search criteria.'
             print(Fore.BLUE + "The searched product has not been found, on the page, showing the following message \n" + name)
 
+            fileName = str(round(time.time() * 1000)) + ".png"
+            screenshotDirectory = "C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Screenshots\\"
+            destinationFile = screenshotDirectory + fileName
+            driver.save_screenshot(destinationFile)
+            print("Screenshot shot saved to directory:-->" + destinationFile)
 
 
 

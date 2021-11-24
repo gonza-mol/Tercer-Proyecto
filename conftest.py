@@ -2,6 +2,9 @@ import time
 import warnings
 import json
 import pytest
+from Utils import utils as utils
+from selenium.common.exceptions import NoSuchElementException
+
 
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome")
@@ -19,6 +22,7 @@ def test_setup(request):
     driver.implicitly_wait(10)
     driver.maximize_window()
     request.cls.driver = driver
+    driver.get(utils.URL)
     yield
     driver.close()
     driver.quit()

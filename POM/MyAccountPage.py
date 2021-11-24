@@ -3,6 +3,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from colorama import Fore, Back, Style
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.select import Select
 
 
 class MyAccountPageLocators():
@@ -41,7 +42,9 @@ class MyAccountPageLocators():
       btnContribute = (By.CSS_SELECTOR, "div.pull-right.mr20.mt5>div>a>img")
       linkAbanteCard = (By.CSS_SELECTOR, "div.pull-right.align_center>a")
       testimonials = (By.CSS_SELECTOR, "#testimonialsidebar>div>ul>li")
-      #individualTestimonial = (By.CSS_SELECTOR, "#testimonialsidebar>div>ul>li")
+      dropDownOrderByNameAZ = (By.ID, "sort")
+      listOfPaperback = (By.CSS_SELECTOR, "div.thumbnails.grid.row.list-inline>div")
+      nameOfPaperback =(By.CSS_SELECTOR, "div.fixed_wrapper>div>a")
 
 class MyAccountPage():
 
@@ -191,4 +194,13 @@ class MyAccountPage():
         return self.driver.find_elements(*MyAccountPageLocators.testimonials)
 
 
+    def selectOrderByNameA_Z(self, order):
+        sel = Select(self.driver.find_element(*MyAccountPageLocators.dropDownOrderByNameAZ))
+        sel.select_by_visible_text(order)
 
+    def getListOfPaperback(self):
+        return self.driver.find_elements(*MyAccountPageLocators.listOfPaperback)
+
+    def getNameOfPaperback(self):
+        title = self.driver.find_elements(*MyAccountPageLocators.nameOfPaperback)
+        return title

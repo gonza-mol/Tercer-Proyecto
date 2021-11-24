@@ -1,25 +1,16 @@
 import time
 import pytest
-import driver as driver
-from pytest_bdd.parsers import string
-from selenium import webdriver
 import unittest
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
-from functools import partial
-from pytest_bdd import scenarios, given, when, then
 from colorama import Fore, Back, Style
-
-
-from POM.MyAccountPage import MyAccountPage
 from POM.CreateUserPage import CreateUserPage
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from Utils import utils as utils
-import conftest
 import HtmlTestRunner
-import logging
+
 
 
 @pytest.mark.usefixtures("test_setup")

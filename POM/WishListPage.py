@@ -1,6 +1,4 @@
 from selenium.webdriver.common.by import By
-import time
-from selenium.webdriver import ActionChains
 
 
 class WishlistPageLocators():

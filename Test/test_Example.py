@@ -5,18 +5,9 @@ import pytest
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
-from functools import partial
-from pytest_bdd import scenarios, parsers, given, when, then, scenario
-from colorama import Fore, Back, Style
 import time
-from POM.LandingPage import LandingPage
-from POM.LoginPage import LoginPage
-from POM.ProductPage import ProductPage
-from POM.MyAccountPage import MyAccountPage
-import conftest
-import HtmlTestRunner
 from Utils import utils as utils
-import logging
+
 
 @pytest.mark.usefixtures("test_setup")
 class TestGiveReview():

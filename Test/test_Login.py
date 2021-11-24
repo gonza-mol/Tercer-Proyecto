@@ -1,24 +1,16 @@
 import time
 import pytest
-import warnings
-import driver as driver
-from pytest_bdd.parsers import string
-from selenium import webdriver
 import unittest
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 import json
-from functools import partial
-from pytest_bdd import scenarios, given, when, then
 from colorama import Fore, Back, Style
 
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
-import conftest
 import HtmlTestRunner
-import logging
 from Utils import utils as utils
 
 

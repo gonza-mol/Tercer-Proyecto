@@ -1,28 +1,12 @@
-from pytest_bdd.parsers import string
-from selenium import webdriver
 import unittest
 import pytest
 import sys
 import os
-
-from selenium.common.exceptions import NoSuchElementException, ElementNotVisibleException, ElementNotSelectableException
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions
-
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
-from functools import partial
-from pytest_bdd import scenarios, parsers, given, when, then, scenario
 from colorama import Fore, Back, Style
 import time
-from POM.LandingPage import LandingPage
-from POM.LoginPage import LoginPage
-from POM.ProductPage import ProductPage
 from POM.MyAccountPage import MyAccountPage
-import conftest
 import HtmlTestRunner
-import logging
-from Utils import utils as utils
-from selenium.webdriver.common.by import By
 
 
 @pytest.mark.usefixtures("test_setup")
@@ -31,7 +15,7 @@ class TestVerify_Testimonials():
 
     def test_Verify_Testimonials(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         time.sleep(2)
         account = MyAccountPage(driver)
         driver.execute_script("window.scrollTo(0, 4000)")
@@ -48,9 +32,6 @@ class TestVerify_Testimonials():
                 # time.sleep(7)
                 n = n + 1
                 time.sleep(7)
-
-            # lista1.append(test.text)
-
 
 
 

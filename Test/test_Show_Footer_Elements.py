@@ -1,21 +1,14 @@
-from pytest_bdd.parsers import string
-from selenium import webdriver
 import unittest
 import pytest
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
-from functools import partial
-from pytest_bdd import scenarios, parsers, given, when, then, scenario
 from colorama import Fore, Back, Style
 import time
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
-from POM.ProductPage import ProductPage
 from POM.MyAccountPage import MyAccountPage
-import conftest
 import HtmlTestRunner
-import logging
 from Utils import utils as utils
 
 
