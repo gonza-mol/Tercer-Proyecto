@@ -7,8 +7,12 @@ class Screen():
         self.driver = driver
 
     def screenshot(self):
-        screenshotDirectory = "C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Screenshots\\"
-        fileName = time.asctime().replace(":","_") + ".png"
-        destinationFile = screenshotDirectory + fileName
-        self.driver.save_screenshot(destinationFile)
-        print("Screenshot shot saved to directory:-->" + destinationFile)
+        try:
+            screenshotDirectory = "C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Screenshots\\"
+            fileName = time.asctime().replace(":","_") + ".png"
+            destinationFile = screenshotDirectory + fileName
+            self.driver.save_screenshot(destinationFile)
+            print("Screenshot saved to directory:-->" + destinationFile)
+
+        except:
+            print("Por alguna razón no se pudo capturar la imagen donde está fallando el Test Case")

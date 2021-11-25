@@ -16,7 +16,7 @@ class TestUserAlreadyBeenCreated():
 
     def test_UserAlreadyBeenCreated(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         lp = LandingPage(driver)
         lp.click_Go_Login()
         time.sleep(2)

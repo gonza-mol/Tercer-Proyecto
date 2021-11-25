@@ -15,7 +15,7 @@ class TestSwitchBetweenThreeWindows():
 
     def test_SwitchBetweenThreeWindows(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         time.sleep(2)
         account = MyAccountPage(driver)
         driver.execute_script("window.scrollTo(0, 4000)")

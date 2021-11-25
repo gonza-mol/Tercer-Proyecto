@@ -19,7 +19,7 @@ class TestVerifyMandatoryFieldContactUs():
 
     def test_Verify_Mandatory_Fields_ContactUs(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         time.sleep(2)
         # ir a login page
         lp = LandingPage(driver)

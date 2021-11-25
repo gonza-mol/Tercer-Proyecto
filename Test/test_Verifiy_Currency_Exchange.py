@@ -11,7 +11,7 @@ from POM.MyAccountPage import MyAccountPage
 from POM.ShoppingCartPage import ShoppingCartPage
 from POM.ShampooPage import ShampooPage
 import HtmlTestRunner
-from Utils import utils as utils
+
 
 @pytest.mark.sanity
 @pytest.mark.usefixtures("test_setup")
@@ -19,7 +19,7 @@ class TestVerifyCurrencyExchange():
 
     def test_Verify_ContactUsForm(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         time.sleep(2)
         # ir a login page
         lp = LandingPage(driver)

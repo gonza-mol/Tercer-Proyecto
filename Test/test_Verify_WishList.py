@@ -13,7 +13,6 @@ from POM.LipsPage import LipsPage
 from POM.ProductPage import ProductPage
 from POM.WishListPage import WishListPage
 import HtmlTestRunner
-from Utils import utils as utils
 
 
 
@@ -23,7 +22,7 @@ class TestVerifyWishList():
 
     def test_VerifyWishList(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         time.sleep(2)
         # ir a login page
         lp = LandingPage(driver)
@@ -34,7 +33,7 @@ class TestVerifyWishList():
         logpa.do_Login("gonza_mol", "Chicharito10")
         scp = ShoppingCartPage(driver)
         my = MyAccountPage(driver)
-        my.seleccionar_Producto_Makeup()
+        my.select_HairCare_Shampoo()
         time.sleep(2)
         lip = LipsPage(driver)
         time.sleep(4)

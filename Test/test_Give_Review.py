@@ -18,7 +18,7 @@ class TestGiveReview():
 
     def test_Give_Review(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         time.sleep(2)
         # ir a login page
         lp = LandingPage(driver)

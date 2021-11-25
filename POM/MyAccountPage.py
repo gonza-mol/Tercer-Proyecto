@@ -108,10 +108,10 @@ class MyAccountPage():
         self.driver.find_element(*MyAccountPageLocators.link_ContactUs).click()
 
 
-    def seleccionar_Producto_Makeup(self):
-        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*MyAccountPageLocators.hair_care_btn))
-        hover.perform()
-        self.driver.find_element(*MyAccountPageLocators.shampoo_option).click()
+    # def seleccionar_Producto_MakeupWishList(self):
+    #      hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*MyAccountPageLocators.hair_care_btn))
+    #      hover.perform()
+    #      self.driver.find_element(*MyAccountPageLocators.shampoo_option).click()
 
     def select_HairCare_Shampoo(self):
         hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*MyAccountPageLocators.hair_care_btn))

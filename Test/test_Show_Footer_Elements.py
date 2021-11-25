@@ -19,7 +19,7 @@ class TestShowFooterElements():
 
     def test_ShowFooterElements(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         time.sleep(2)
         # ir a login page
         lp = LandingPage(driver)

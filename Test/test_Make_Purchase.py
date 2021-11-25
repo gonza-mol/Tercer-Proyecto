@@ -3,18 +3,19 @@ import pytest
 import unittest
 import sys
 import os
+
+from POM.CheckoutConfirmationPage import CheckoutConfirmationPage
+from POM.CheckoutStatus import CheckoutStatus
+from POM.ProductPage import ProductPage
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from POM.LandingPage import LandingPage
 from POM.LoginPage import LoginPage
 from POM.MyAccountPage import MyAccountPage
 from POM.LipsPage import LipsPage
-from POM.ProductPage import ProductPage
 from POM.ShoppingCartPage import ShoppingCartPage
-from POM.CheckoutConfirmationPage import CheckoutConfirmationPage
-from POM.CheckoutStatus import CheckoutStatus
 import HtmlTestRunner
-from Utils import utils as utils
 
 @pytest.mark.usefixtures("test_setup")
 class TestMakePurchase():
@@ -22,7 +23,7 @@ class TestMakePurchase():
 
     def test_MakePurchase(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         time.sleep(2)
         #ir a login page
         lp = LandingPage(driver)
@@ -49,7 +50,7 @@ class TestMakePurchase():
             time.sleep(2)
             my.seleccionar_Producto_Makeup()
         # Acá selecciono La pagina del producto(lapiz labial) para agregarlo a carrito e ir a la pagina de producto
-        #scp = ShoppingCartPage(driver)
+        scp = ShoppingCartPage(driver)
         time.sleep(2)
         lip = LipsPage(driver)
         lip.add_Cart1()
@@ -58,7 +59,7 @@ class TestMakePurchase():
         pp = ProductPage(driver)
         pp.select_Product_Lips_Color_And_Qty("Viva Glam II", "3")
         time.sleep(2)
-        # Aca estando en ShoppingCartPage verifico que el color sea el elegido, el precio unitario, la cantidad, y el precio total
+        #Aca estando en ShoppingCartPage verifico que el color sea el elegido, el precio unitario, la cantidad, y el precio total
         assert scp.show_Color() == 'Color Viva Glam II'
         print("\n")
         print(Fore.BLUE + "Acá empiezan todas las validaciones en la Página Shopping Cart:")
@@ -89,7 +90,7 @@ class TestMakePurchase():
         print(Fore.CYAN + "Se encuentra el subtitulo: " + ccp.show_Subtitle())
         assert ccp.show_Name_Shipping() == "Gonzalo Molina\n223232323"
         print(Fore.CYAN + "Está el nombre del usuario buscado: " + ccp.show_Name_Shipping())
-        assert ccp.show_Address_Shipping() == "Sol de Mayo 550\nCórdoba Cordoba 5000\nArgentina"
+        assert ccp.show_Address_Shipping() == "Sol de Mayo 550 Mandioca 2400, 2do Piso\nCórdoba Cordoba 5000\nArgentina"
         print(Fore.CYAN + "Está el domicilio del usuario: " + ccp.show_Address_Shipping())
         assert ccp.show_Flat_Shipping() == "Flat Shipping Rate"
         print(Fore.CYAN + "Está el título " + ccp.show_Flat_Shipping())
@@ -109,7 +110,7 @@ class TestMakePurchase():
         print(Fore.CYAN + "Está la sección " + ccp.show_Payment_Title())
         assert ccp.show_Name_Payment() == "Gonzalo Molina\n223232323"
         print(Fore.CYAN + "El nombre del usuario está " + ccp.show_Name_Payment())
-        assert ccp.show_Address_Payment() == "Sol de Mayo 550\nCórdoba Cordoba 5000\nArgentina"
+        assert ccp.show_Address_Payment() == "Sol de Mayo 550 Mandioca 2400, 2do Piso\nCórdoba Cordoba 5000\nArgentina"
         print(Fore.CYAN + "Está la dirección del usuario " + ccp.show_Address_Payment())
         assert ccp.show_Cash_Deliveryt() == "Cash On Delivery"
         print(Fore.CYAN + "Está el título " + ccp.show_Cash_Deliveryt())

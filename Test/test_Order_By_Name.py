@@ -22,11 +22,11 @@ class TestVerify_Testimonials():
         time.sleep(2)
         account = MyAccountPage(driver)
         account.seleccionar_Producto_Books_Paperback()
-        ss= Screen(driver)
+        ss = Screen(driver)
         time.sleep(2)
         account.selectOrderByNameA_Z("Name A - Z")
         time.sleep(2)
-        lista1 = ["BLLEGIANT BY VERONICA ROTH", "PAPER TOWNS BY JOHN GREEN","THE MIRACLE MORNING: THE NOT-SO-OBVIOUS SECRET GUARANTEED TO TRANSFORM YOUR LIFE"]
+        lista1 = ["ALLEGIANT BY VERONICA ROTH", "PAPER TOWNS BY JOHN GREEN","THE MIRACLE MORNING: THE NOT-SO-OBVIOUS SECRET GUARANTEED TO TRANSFORM YOUR LIFE"]
         paper = account.getListOfPaperback()
         name = account.getNameOfPaperback()
         print(Fore.MAGENTA+"\nEl número de paperback en la página es: "+str(len(account.getListOfPaperback()))+Fore.RESET)

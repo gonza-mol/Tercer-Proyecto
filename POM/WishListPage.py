@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class WishlistPageLocators():
-      label_product_selected1 = (By.CSS_SELECTOR, "tbody>tr.wishlist_59>td:nth-child(2)>a")
+      label_product_selected1 = (By.CSS_SELECTOR, " tbody > tr.wishlist_74 > td:nth-child(2) > a")
 
 class WishListPage():
 

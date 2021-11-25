@@ -19,7 +19,7 @@ class TestLogin():
 
     def test_Login(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         lp = LandingPage(driver)
         lp.click_Go_Login()
         logpa = LoginPage(driver)

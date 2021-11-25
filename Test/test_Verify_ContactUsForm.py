@@ -19,7 +19,7 @@ class TestVerifyContactUsForm():
 
     def test_Verify_ContactUsForm(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         time.sleep(2)
         # ir a login page
         lp = LandingPage(driver)

@@ -18,7 +18,7 @@ class TestProductOfStock():
 
     def test_Product_Of_Stock(self):
         driver = self.driver
-        driver.get(utils.URL)
+        #driver.get(utils.URL)
         time.sleep(2)
         my = MyAccountPage(driver)
         my.seleccionar_Producto_Books_Paperback()
