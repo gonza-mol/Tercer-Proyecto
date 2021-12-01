@@ -28,7 +28,7 @@ class TestProductOfStock():
         leyend = pp.getLblOutofStock()
         title = pp.getTitleofPaperbackWithoutStock()
         assert "OUT OF STOCK" == leyend
-        #este de assert de abajo lo que hace es traer el objeto del btn que dice out of stock y con el método
+        #este assert de abajo lo que hace es traer el objeto del btn que dice out of stock y con el método
         #is_displayed() lo que hace es devolver un true si existe y false si no y ahi lo compara con el True
         assert pp.getObjectOutofStock().is_displayed() == True
         #Este print de abajo trae el componente que tiene out of stock y con el método value_of_css_property
