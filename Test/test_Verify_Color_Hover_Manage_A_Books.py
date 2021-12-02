@@ -25,6 +25,7 @@ class TestVerifyColorHoverManageBooks():
         time.sleep(2)
         logpa.do_Login("gonza_mol", "Chicharito10")
         account = MyAccountPage(driver)
+        assert 'rgba(245, 245, 245, 1)' in account.getBoxManageBooks().value_of_css_property('background-color')
         account.select_Hover_ManageAddressBooks()
         assert 'rgba(242, 92, 39, 1)' in account.getBoxManageBooks().value_of_css_property('background-color')
         print(Fore.GREEN +"\nAl hacer hover sobre el componente de Manage Address Books, se está visualizando el color esperado "+Fore.RESET)

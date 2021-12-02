@@ -41,16 +41,18 @@ class TestVerifyColorHoverAllBoxes():
         #    hover.perform()
         #    assert 'rgba(242, 92, 39, 1)' in boxn.value_of_css_property('background-color')
         #    n = n+1
-        # print(
-        #     Fore.GREEN + "\nAl hacer hover sobre cada icono en My Account, se está visualizando el color esperado " + Fore.RESET)
+        #
+        # print(Fore.GREEN + "\nAl hacer hover sobre cada icono en My Account, se está visualizando el color esperado " + Fore.RESET)
         # print(Fore.YELLOW + boxn.value_of_css_property('background-color') + " Que representa naranja" + Fore.RESET)
 
         #solución1
         for i in box:
             aux = account.getIndividualBox(n)
+            assert 'rgba(245, 245, 245, 1)' in aux.value_of_css_property('background-color')
             hover = ActionChains(driver).move_to_element(aux)
             hover.perform()
             assert 'rgba(242, 92, 39, 1)' in aux.value_of_css_property('background-color')
             n = n+1
+
         print(Fore.GREEN +"\nAl hacer hover sobre cada icono en My Account, se está visualizando el color esperado "+Fore.RESET)
         print(Fore.YELLOW+aux.value_of_css_property('background-color')+" Que representa naranja"+Fore.RESET)
