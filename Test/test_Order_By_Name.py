@@ -7,7 +7,7 @@ from colorama import Fore, Back, Style
 import time
 from POM.MyAccountPage import MyAccountPage
 import HtmlTestRunner
-from Utils.screenShot import Screen
+from Utils.screenShotNoUSAR import Screen
 
 
 
@@ -43,7 +43,6 @@ class TestVerify_Testimonials():
             else:
                 print(Fore.RED+"Los elementos no están ordenados alfabéticamente"+Fore.RESET)
                 b = 1
-                ss.screenshot()
                 break
         if b == 1:
             print(Fore.RED+"No se muestra nada ya que no están ordenados alfabéticamente"+Fore.RESET)

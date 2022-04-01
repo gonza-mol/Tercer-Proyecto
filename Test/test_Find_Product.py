@@ -29,7 +29,7 @@ class TestFindProduct():
         # Esto permite el logueo
         logpa.do_Login("gonza_mol", "Chicharito10")
         my = MyAccountPage(driver)
-        my.seleccionar_Búsqueda("Miel")
+        my.seleccionar_Búsqueda("Frenche")
         my.ejecutar_Búsqueda_Glass()
         #estas lineas comentadas es para ejecutar una búsqueda de un producto usando la tecla Enter
         #my = MyAccountPage(driver)
@@ -49,11 +49,6 @@ class TestFindProduct():
             assert name == 'There is no product that matches the search criteria.'
             print(Fore.BLUE + "The searched product has not been found, on the page, showing the following message \n" + name)
 
-            fileName = str(round(time.time() * 1000)) + ".png"
-            screenshotDirectory = "C:\\Users\\admin\\PycharmProjects\\TercerProyecto\\Screenshots\\"
-            destinationFile = screenshotDirectory + fileName
-            driver.save_screenshot(destinationFile)
-            print("Screenshot shot saved to directory:-->" + destinationFile)
 
 
 

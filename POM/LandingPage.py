@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 
@@ -9,7 +11,8 @@ class LandingPageLocators():
     Euro_Currency = (By.CSS_SELECTOR, "div.block_6>ul>li>ul>li:nth-child(1)>a")
     forgotLogin = (By.CSS_SELECTOR, "#loginFrm>fieldset>a:nth-child(4)")
     specialOffersLink = (By.CSS_SELECTOR, "#main_menu_top>li:nth-child(1)>a>span")
-
+    ApparelandAccessories = (By.CSS_SELECTOR, "#categorymenu>nav>ul>li:nth-child(2)>a")
+    tShirtoption = (By.CSS_SELECTOR, "#categorymenu > nav > ul > li:nth-child(2) > div > ul:nth-child(1) > li:nth-child(2)")
 
 class LandingPage():
 
@@ -39,5 +42,8 @@ class LandingPage():
     def selectSpecialsOffers(self):
         self.driver.find_element(*LandingPageLocators.specialOffersLink).click()
 
-
+    def select_ApparelAndT_Shirts(self):
+        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*LandingPageLocators.ApparelandAccessories))
+        hover.perform()
+        self.driver.find_element(*LandingPageLocators.tShirtoption).click()
 

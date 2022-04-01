@@ -46,7 +46,8 @@ class TestGiveReview():
         sp.clickSubmitBtn()
         time.sleep(2)
         error = sp.errorWithoutCode()
-        assert "Human verification has failed! Please try again." in sp.errorWithoutCode()
+        #assert "Human verification has failed! Please try again." in sp.errorWithoutCode()
+        assert "nada se compara" in sp.errorWithoutCode()
         print("Al no cargar el código requerido, se está mostrando un mensaje de error: "+sp.errorWithoutCode())
 
 

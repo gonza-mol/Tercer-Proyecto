@@ -15,7 +15,7 @@ from Utils import utils as utils
 
 
 @pytest.mark.usefixtures("test_setup")
-class TestLogin():
+class TestLogin:
 
     def test_Login(self):
         driver = self.driver

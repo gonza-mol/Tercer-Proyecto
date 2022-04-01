@@ -5,6 +5,8 @@ import os
 
 from selenium.webdriver import ActionChains
 
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 import time
@@ -15,17 +17,19 @@ import HtmlTestRunner
 
 
 @pytest.mark.usefixtures("test_setup")
-class Test_SpecialOffers():
+class Test_SpecialOffers(BaseClass):
 
 
     def test_Verify_Specials_Offers(self):
         driver = self.driver
+        log = self.get_Logger()
         time.sleep(2)
         lp = LandingPage(driver)
         lp.selectSpecialsOffers()
         so = SpecialOffersPage(driver)
         numberofsales = len(so.getAllSales())
         print(Fore.YELLOW+"\nCantidad de elementos en sales es: "+str(numberofsales)+Fore.RESET)
+        log.info("Cantidad de Elementos en sales es")
         aux = so.getAllSales()
         n = 1
         b = 6
@@ -48,6 +52,7 @@ class Test_SpecialOffers():
             except:
                  print(Fore.RED+"En alguno de los productos, el label Sales, no se está visualizando"+Fore.RESET)
 
+        log.info("Se ve el resultado final")
 
     if __name__ == '__main__':
             unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(

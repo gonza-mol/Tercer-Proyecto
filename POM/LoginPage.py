@@ -40,4 +40,3 @@ class LoginPage():
         self.driver.find_element(*LoginPageLocators.btn_continue_register1).click()
 
 
-

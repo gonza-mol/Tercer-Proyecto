@@ -13,6 +13,9 @@ class ProductPageLocators():
     btn_Remove_Wish_List = (By.CSS_SELECTOR, "#product>fieldset>div.wishlist>a.wishlist_remove.btn.btn-large")
     lbl_Out_of_Stock_Paperback = (By.CSS_SELECTOR, "div.pricetag.jumbotron>span")
     lbl_Paperback_Without_Stock = (By.CSS_SELECTOR, "div:nth-child(2)>div.fixed_wrapper>div>a")
+    tShirtIcon = (By.CSS_SELECTOR, "div.thumbnails.grid.row.list-inline>div:nth-child(3)>div.thumbnail")
+    downloadTab = (By.CSS_SELECTOR, "#myTab>li:nth-child(5)>a")
+    downloadButton = (By.CSS_SELECTOR, "#productdownloads>ul>li>a")
 
 
 class ProductPage():
@@ -49,6 +52,15 @@ class ProductPage():
 
     def getObjectOutofStock(self):
         return self.driver.find_element(*ProductPageLocators.lbl_Out_of_Stock_Paperback)
+
+    def selectTshirtTresCuarto(self):
+        self.driver.find_element(*ProductPageLocators.tShirtIcon).click()
+
+    def selectDownloadTab(self):
+        self.driver.find_element(*ProductPageLocators.downloadTab).click()
+
+    def selectDownloadButton(self):
+        self.driver.find_element(*ProductPageLocators.downloadButton).click()
 
 
 
