@@ -5,6 +5,7 @@ class LipsPageLocators():
     btn_AddCart1 = (By.CSS_SELECTOR, "div:nth-child(3)>div.thumbnail>div.pricetag.jumbotron>a>i")
     btn_Select_Product = (By.CSS_SELECTOR, "div:nth-child(2)>div.thumbnail>a>img")
 
+
 class LipsPage():
 
     def __init__(self, driver):

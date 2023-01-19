@@ -5,6 +5,8 @@ import os
 
 from selenium.webdriver.common.by import By
 
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 import time
@@ -14,10 +16,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-
 @pytest.mark.usefixtures("test_setup")
 
-class TestVerify_BannersHomePage():
+class TestVerify_BannersHomePage(BaseClass):
 
 
     def test_Verify_BannersHomePage(self):

@@ -7,6 +7,8 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 import time
@@ -18,7 +20,7 @@ from Utils import utils as utils
 
 
 @pytest.mark.usefixtures("test_setup")
-class TestVerifyColorHoverAllBoxes():
+class TestVerifyColorHoverAllBoxes(BaseClass):
 
 
     def test_Verify_Color_Hover_All_Boxes(self):

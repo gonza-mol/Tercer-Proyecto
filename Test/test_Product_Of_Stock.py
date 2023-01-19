@@ -3,6 +3,9 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from selenium.common.exceptions import NoSuchElementException
@@ -13,7 +16,7 @@ from Utils import utils as utils
 
 
 @pytest.mark.usefixtures("test_setup")
-class TestProductOfStock():
+class TestProductOfStock(BaseClass):
 
 
     def test_Product_Of_Stock(self):

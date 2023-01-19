@@ -3,6 +3,9 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 import json
 from colorama import Fore, Back, Style
@@ -15,7 +18,7 @@ from Utils import utils as utils
 
 
 @pytest.mark.usefixtures("test_setup")
-class TestLogin:
+class TestLogin(BaseClass):
 
     def test_Login(self):
         driver = self.driver

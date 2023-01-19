@@ -2,6 +2,9 @@ import unittest
 import pytest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 import time
@@ -13,11 +16,12 @@ from Utils import utils as utils
 
 
 @pytest.mark.usefixtures("test_setup")
-class TestShowElementsMenu():
+class TestShowElementsMenu(BaseClass):
 
 
     def test_ShowElementsMenu(self):
         driver = self.driver
+        log = self.get_Logger()
         #driver.get(utils.URL)
         time.sleep(2)
         # ir a login page
@@ -40,7 +44,7 @@ class TestShowElementsMenu():
             assert menu.text == items[aux]
             aux = aux+1
             print(Style.BRIGHT+Fore.MAGENTA+str(idx), menu.text)
-
+        log.info("Termino la ejecucion")
 
 
     if __name__ == '__main__':

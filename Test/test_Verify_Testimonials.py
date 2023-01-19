@@ -2,6 +2,9 @@ import unittest
 import pytest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 import time
@@ -10,7 +13,7 @@ import HtmlTestRunner
 
 
 @pytest.mark.usefixtures("test_setup")
-class TestVerify_Testimonials():
+class TestVerify_Testimonials(BaseClass):
 
 
     def test_Verify_Testimonials(self):

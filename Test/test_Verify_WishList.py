@@ -3,6 +3,9 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from POM.MyAccountPage import MyAccountPage
@@ -15,10 +18,8 @@ from POM.WishListPage import WishListPage
 import HtmlTestRunner
 
 
-
 @pytest.mark.usefixtures("test_setup")
-class TestVerifyWishList():
-
+class TestVerifyWishList(BaseClass):
 
     def test_VerifyWishList(self):
         driver = self.driver

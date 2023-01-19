@@ -2,6 +2,9 @@ import unittest
 import pytest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 import time
@@ -13,7 +16,7 @@ from Utils import utils as utils
 
 
 @pytest.mark.usefixtures("test_setup")
-class TestVerifyColorHoverManageBooks():
+class TestVerifyColorHoverManageBooks(BaseClass):
 
 
     def test_Verify_Color_Hover_Manage_A_Books(self):

@@ -17,7 +17,7 @@ import HtmlTestRunner
 
 
 @pytest.mark.usefixtures("test_setup")
-class Test_SpecialOffers(BaseClass):
+class TestSpecialOffers(BaseClass):
 
 
     def test_Verify_Specials_Offers(self):

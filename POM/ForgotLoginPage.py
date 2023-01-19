@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 
+
 class ForgotLoginLocators():
     txt_LastName = (By.ID, "forgottenFrm_lastname")
     txt_Email = (By.ID, "forgottenFrm_email")

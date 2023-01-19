@@ -4,6 +4,7 @@ import unittest
 import sys
 import os
 
+from BaseClass import BaseClass
 from POM.CheckoutConfirmationPage import CheckoutConfirmationPage
 from POM.CheckoutStatus import CheckoutStatus
 from POM.ProductPage import ProductPage
@@ -17,8 +18,9 @@ from POM.LipsPage import LipsPage
 from POM.ShoppingCartPage import ShoppingCartPage
 import HtmlTestRunner
 
+
 @pytest.mark.usefixtures("test_setup")
-class TestMakePurchase():
+class TestMakePurchase(BaseClass):
 
 
     def test_MakePurchase(self):

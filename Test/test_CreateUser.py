@@ -3,6 +3,9 @@ import pytest
 import unittest
 import sys
 import os
+
+from BaseClass import BaseClass
+
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 from colorama import Fore, Back, Style
 from POM.MyAccountPage import MyAccountPage
@@ -14,7 +17,7 @@ from Utils import utils as utils
 
 
 @pytest.mark.usefixtures("test_setup")
-class TestCreateUser():
+class TestCreateUser(BaseClass):
 
 
     def test_CreateUser(self):
